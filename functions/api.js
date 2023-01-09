@@ -8,10 +8,9 @@ const router = express.Router();
 const dotenv = require('dotenv');
 dotenv.config();
 
-var allowedOrigins = ['http://localhost:8888',
-    process.env.CLIENT_1,//Appseonit URL
-    process.env.CLIENT_2,//Mforce URL
-    process.env.CLIENT_3,//SecuPower URL
+var allowedOrigins = ['http://localhost:5500',
+    process.env.CLIENT_1,
+    process.env.CLIENT_2,
 ];
 
 app.use(cors({
@@ -20,7 +19,7 @@ app.use(cors({
         // (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
         if (allowedOrigins.indexOf(origin) === -1) {
-            var msg = 'Appseonit CORS policy for this site does not allow access from the specified origin.';
+            var msg = 'IIC TECHNOLOGIES CORS';
             return callback(new Error(msg), false);
         }
         return callback(null, true);
@@ -33,7 +32,7 @@ app.use(bodyParser.json());
 
 router.get("/", (req, res) => {
     res.json({
-        message: "This is Appseonit Technologies Private Limited Intellectual Property, any kind of hampering or causing trouble by anyone will be subjected to legal terms!"
+        message: "This is IIC TECHNOLOGIES Technologies Private Limited Intellectual Property, any kind of hampering or causing trouble by anyone will be subjected to legal terms!"
     })
 });
 
